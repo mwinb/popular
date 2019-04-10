@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Popular is a web app to help remember co-workers names, faces, jobs, and birthdates.
 
-Things you may want to cover:
+## How to run app
 
-* Ruby version
+_TODO_
 
-* System dependencies
+## How to run test suite
 
-* Configuration
+_TODO_
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Created by Taylor Mallory and Carlos Gonzalez
