@@ -21,7 +21,6 @@ RSpec.describe Person do
 		expect(person.on_deck?) == false
 		expect(next_person.in_view?) == false
 		expect(next_person.on_deck?) == true
-
 	end
 
 end
