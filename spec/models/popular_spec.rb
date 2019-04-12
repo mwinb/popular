@@ -35,4 +35,8 @@ RSpec.describe Person do
 		expect(next_person.status) == "A"
 	end
 
+	describe "organization" do
+		let (:org) {Organization.new()}
+	end
+
 end
