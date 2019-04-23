@@ -1,4 +1,4 @@
-class Person
+class Employee
 	attr_accessor :full_name, :dob, :job_title, :department, :status
 
 	def initialize(full_name, dob, job_title, department, status)
