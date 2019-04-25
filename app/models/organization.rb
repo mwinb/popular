@@ -1,15 +1,16 @@
-class Organization
-	attr_accessor :name, :location, :departments, :employees
-
-	def initialize(name, location)
-		@name = name
-		@location = location
-		@employees = []
-	end
+class Organization < ApplicationRecord
+	# attr_accessor :name, :location, :departments, :employees
+	has_many :departments
+	# @employees = []
+	# def initialize(name, location)
+	# 	@name = name
+	# 	@location = location
+	# 	@employees = []
+	# end
 
 	def add_employee(employee)
 		if employee.organization == @name
-			employees << employee
+			employees << employee.full_name
 		end
 	end
 

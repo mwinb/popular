@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Employee do
-	let (:employee) { Employee.new("Frank Reynolds", "01/31/1943", "financer", "Paddys Pub", "Finance", "NA") }
-	let (:next_employee) { Employee.new("Charlie Day", "02/09/1976", "janitor", "Paddys Pub", "Maintenance", "A") }
+	let (:employee) { Employee.new(full_name:"Frank Reynolds", dob:"01/31/1943", job_title:"financer", organization:"Paddys Pub", department:"Finance", status:"NA") }
+	let (:next_employee) { Employee.new(full_name:"Charlie Day", dob:"02/09/1976", job_title:"janitor", organization:"Paddys Pub", department:"Maintenance", status:"A") }
 	
 	it "has distinctive information" do
 		expect(employee.full_name) == "Frank Reynolds"
