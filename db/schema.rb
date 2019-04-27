@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_25_005839) do
+ActiveRecord::Schema.define(version: 2019_04_25_154923) do
 
-  create_table "Employees", force: :cascade do |t|
+  create_table "employees", force: :cascade do |t|
     t.string "full_name"
-    t.string "dob"
+    t.date "dob"
     t.string "job_title"
     t.string "department"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_employees_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|

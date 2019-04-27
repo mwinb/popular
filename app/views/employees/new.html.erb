@@ -1,0 +1,19 @@
+<h1>Employee Info</h1>
+<%= form_for(@employee) do |f| %>
+    <%= f.label(:full_name) %>
+    <%= f.text_field(:full_name) %>
+    <br />
+    <%= f.label(:dob) %>
+    <%= f.text_field(:dob) %>
+    <br />
+    <%= f.label(:job_title) %>
+    <%= f.text_field(:job_title) %>
+    <br />
+    <%= f.label(:organization) %>
+    <%= f.text_field(:organization) %>
+    <br />
+    <%= f.label(:department) %>
+    <%= f.text_field(:department) %>
+    <br />
+    <%= f.submit %>
+<% end %>

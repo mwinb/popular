@@ -1,6 +1,6 @@
 class Organization < ApplicationRecord
 	# attr_accessor :name, :location, :departments, :employees
-	has_many :departments
+	has_many :employee
 	# @employees = []
 	# def initialize(name, location)
 	# 	@name = name
