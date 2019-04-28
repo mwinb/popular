@@ -8,4 +8,10 @@ class CreatesEmployee
     def build
        self.employee = Employee.new(full_name: full_name)
     end
+
+    def create
+        build
+        employee.save
+    end
+
 end
