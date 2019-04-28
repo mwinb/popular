@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
     def new
-        @organizations = Organization.new
+        @organization = Organization.new
     end
 end

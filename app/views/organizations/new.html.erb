@@ -1,0 +1,10 @@
+<h1>Create an Organization</h1>
+<%= form_for(@organization) do |f| %>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+    <br />
+    <%= f.label(:location) %>
+    <%= f.text_field(:location) %>
+    <br />
+    <%= f.submit %>
+<% end %>
