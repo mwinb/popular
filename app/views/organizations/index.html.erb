@@ -1,0 +1,15 @@
+<h1>All Organizations</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Organizations Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @Organization.each do |Organization| %>
+        <tr>
+            <td><%= Organization.name %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

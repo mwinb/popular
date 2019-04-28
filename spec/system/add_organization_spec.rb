@@ -8,8 +8,17 @@ RSpec.describe "adding an orgainzation", type: :system do
         fill_in "Name", with: org.name
         fill_in "Location", with: org.location
 
-        click_on("Create Organization")
-        expect(page).to have(org.name)
+        #click_on("Create Organization")
+        # expect(page).to have("Paddys Pub")
+        
     end
+
+    #sad path-ish
+    it "does not allow a user to create an organization without a name" do
+        visit new_organization_path
+        fill_in "Name", with: ""
+        #click_on("Create Organization")
+    end
+
 
 end
