@@ -4,12 +4,13 @@ class EmployeesController < ApplicationController
     end
 
     def index
-        @employee = Employee.all
+        @employees = Employee.all
     end
 
     def create
         @workflow = CreatesEmployee.new(
-        full_name: params[:employee][:full_name])
+        employee_full_name: params[:employee][:full_name],
+        organization_name: params[:organization_name])
         @workflow.create
         redirect_to employees_path
     end

@@ -10,12 +10,11 @@ RSpec.describe "adding employee", type: :system do
         fill_in "Full name", with:  employee.full_name
         fill_in "Dob", with:  employee.dob
         fill_in "Job title", with:  employee.job_title
-        fill_in "Organization", with:  employee.organization
+        fill_in "Organization name", with:  "FAKE ORGANIZATION"
         fill_in "Department", with:  employee.department
         
         click_on("Create Employee")
-        # visit organization_view_employee_path
-        # expect(page).to have_content("Dennis Reynolds")
+        expect(page).to have_content("Dennis Reynolds")
         # expect(page).to have_content("08-18-1976")
         # expect(page).to have_content("Golden God")
         # expect(page).to have_content("Paddys Pub")
