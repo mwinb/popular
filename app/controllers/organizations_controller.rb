@@ -9,7 +9,7 @@ class OrganizationsController < ApplicationController
     
     def create
         @workflow = CreatesOrganization.new(
-        name: params[:organization][:name])
+        organization_name: params[:organization][:name])
         @workflow.create
         redirect_to organizations_path
     end

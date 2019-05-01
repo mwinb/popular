@@ -8,8 +8,8 @@ RSpec.describe "adding an orgainzation", type: :system do
         fill_in "Name", with: org.name
         fill_in "Location", with: org.location
 
-        #click_on("Create Organization")
-        # expect(page).to have("Paddys Pub")
+        click_on("Create Organization")
+        expect(page).to have_content("Paddys Pub")
         
     end
 

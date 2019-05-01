@@ -1,12 +1,12 @@
 class CreatesOrganization
-    attr_accessor :name
+    attr_accessor :organization_name, :organization
 
-    def initialize(name: "")
-        @name = name
+    def initialize(organization_name: "")
+        @organization_name = organization_name
     end
 
     def build
-       self.organization = Organization.new(name: name)
+       self.organization = Organization.new(name: organization_name)
     end
 
     def create
