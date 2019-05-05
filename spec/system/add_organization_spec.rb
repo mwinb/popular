@@ -6,10 +6,11 @@ RSpec.describe "adding an orgainzation", type: :system do
     it "allows a user make an organization" do
         visit new_organization_path
         fill_in "Name", with: org.name
-        fill_in "Location", with: org.location
+        select org.location, from: "Location"
 
         click_on("Create Organization")
         expect(page).to have_content("Paddys Pub")
+        expect(page).to have_content("PA")
         
     end
 
@@ -17,7 +18,8 @@ RSpec.describe "adding an orgainzation", type: :system do
     it "does not allow a user to create an organization without a name" do
         visit new_organization_path
         fill_in "Name", with: ""
-        #click_on("Create Organization")
+        click_on("Create Organization")
+       # expect(page).to have_content("")
     end
 
 

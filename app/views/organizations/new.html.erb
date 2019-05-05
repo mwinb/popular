@@ -4,7 +4,9 @@
     <%= f.text_field(:name) %>
     <br />
     <%= f.label(:location) %>
-    <%= f.text_field(:location) %>
+
+    <%#= <%= f.text_field(:location) %>
+    <%= f.select :location, options_for_select([["PA"],["OR"],["NY"],["CA"]], :selected => :location) %>
     <br />
     <%= f.submit %>
 <% end %>
