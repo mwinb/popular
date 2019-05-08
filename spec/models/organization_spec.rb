@@ -15,5 +15,11 @@ RSpec.describe Organization do
     it "has a location" do
         expect(organization).to respond_to(:location)
     end
+
+    it "is invalid without a name" do
+        expect(organization).to be_valid
+        organization.name = ""
+        expect(organization).not_to be_valid
+    end
     
 end

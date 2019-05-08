@@ -20,7 +20,7 @@ RSpec.describe "creating an organization", type: :system do
         fill_in "Name", with: ""
         fill_in "Location", with: "FAKE LOCATION"
         click_on("Create Organization")
-        expect(page).to have_content("Error")
+        expect(page).to have_content("error")
     end
 
 end

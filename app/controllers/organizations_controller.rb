@@ -8,10 +8,15 @@ class OrganizationsController < ApplicationController
     end
     
     def create
-        @workflow = CreatesOrganization.new(
-        organization_name: params[:organization][:name],
-        organization_location: params[:organization][:location])
-        @workflow.create
-        redirect_to organizations_path
+        @organization = Organization.new(
+          name: params[:organization][:name],
+          location: params[:organization][:location]
+        )
+        if @organization.save
+            redirect_to organizations_path
+        else
+            render :new
+        end
     end
+    
 end
