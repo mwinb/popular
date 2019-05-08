@@ -8,8 +8,12 @@ RSpec.describe Organization do
         expect(organization).to respond_to(:employees)
     end
 
-    it "only adds employees to itself if they belong to organization" do
-        org.add_employee(rickity_cricket)
-        # byebug
+    it "has a name" do
+        expect(organization).to respond_to(:name)
     end
+
+    it "has a location" do
+        expect(organization).to respond_to(:location)
+    end
+    
 end
