@@ -2,13 +2,16 @@
 <table>
     <thead>
         <tr>
-            <td>Employee Name</td>
+            <strong><td>Employee Name</td></strong>
         </tr>
     </thead>
     <tbody>
         <% @employees.each do |employee| %>
         <tr>
             <td><%= employee.full_name %></td>
+        </tr>
+        <tr>
+            <td><%= employee.dob %></td>
         </tr>
         <% end %>
     </tbody>

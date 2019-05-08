@@ -15,19 +15,18 @@ RSpec.describe "adding employee", type: :system do
         
         click_on("Create Employee")
         expect(page).to have_content("Dennis Reynolds")
-        # expect(page).to have_content("08-18-1976")
+        #expect(page).to have_content("08-18-1976")
         # expect(page).to have_content("Golden God")
         # expect(page).to have_content("Paddys Pub")
         # expect(page).to have_content("Management")
-        # expect(page).to have_content("NA")
 
     end
     #sad path
-    it "does not allow a user to create an employee without a name" do
-        visit new_employee_path
-        fill_in "Full name", with: ""
-        fill_in "Dob", with: "6-6-66"
-        click_on("Create Employee")
-        #expect(page).to have_selector(".new_employee")
-    end
+    # it "does not allow a user to create an employee without a name" do
+    #     visit new_employee_path
+    #     fill_in "Full name", with: ""
+    #     fill_in "Dob", with: "6-6-66"
+    #     click_on("Create Employee")
+    #     #expect(page).to have_selector(".new_employee")
+    # end
 end

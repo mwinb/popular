@@ -10,7 +10,8 @@ class EmployeesController < ApplicationController
     def create
         @workflow = CreatesEmployee.new(
         employee_full_name: params[:employee][:full_name],
-        organization_name: params[:organization_name])
+        organization_name: params[:organization_name],
+        employee_dob: params[:employee][:dob])
         @workflow.create
         redirect_to employees_path
     end
