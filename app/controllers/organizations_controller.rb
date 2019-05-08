@@ -18,5 +18,5 @@ class OrganizationsController < ApplicationController
             render :new
         end
     end
-    
+
 end

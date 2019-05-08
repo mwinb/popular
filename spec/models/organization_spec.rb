@@ -21,5 +21,11 @@ RSpec.describe Organization do
         organization.name = ""
         expect(organization).not_to be_valid
     end
+
+    it "is invalid without a location" do
+        expect(organization).to be_valid
+        organization.location = ""
+        expect(organization).not_to be_valid
+    end
     
 end

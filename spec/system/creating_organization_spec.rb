@@ -23,4 +23,12 @@ RSpec.describe "creating an organization", type: :system do
         expect(page).to have_content("error")
     end
 
+    it "does not allow a user to create an organization without a location" do
+        visit new_organization_path
+        fill_in "Name", with: "FAKE NAME"
+        fill_in "Location", with: ""
+        click_on("Create Organization")
+        expect(page).to have_content("error")
+    end
+
 end
