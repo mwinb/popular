@@ -39,9 +39,9 @@ RSpec.describe CreatesOrganization do
         end
 
         it "checks if a location is selected" do
-            creator = CreatesOrganization.new(organization_name: "Paddys Pub", organization_location: "PA")
+            creator = CreatesOrganization.new(organization_name: "Paddys Pub")
             creator.create
-            assert_nil creator.organization.location.nil?
+            expect(creator.organization.location).to be_nil
         end
 
     end
