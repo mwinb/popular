@@ -15,6 +15,7 @@ RSpec.describe "creating an organization", type: :system do
         expect(page).to have_content(fake_location)
     end
 
+    #SAD PATHS
     it "does not allow a user to create an organization without a name" do
         visit new_organization_path
         fill_in "Name", with: ""
