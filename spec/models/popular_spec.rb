@@ -34,6 +34,5 @@ RSpec.describe Employee do
 	# 	expect(employee.status) == "NA"
 	# 	expect(next_employee.status) == "A"
 	# end
-	
 
 end

@@ -34,33 +34,10 @@ RSpec.describe "adding employee", type: :system do
         fake_dob = "05-25-1987"
         fake_title = "FAKE TITLE"
         fake_oranization = "FAKE ORGANIZATION"
-        
-        visit new_employee_path
+        #do fill ins
         fill_in "Full name", with: fake_name
         fill_in "Dob", with: fake_dob
         fill_in "Job title", with: fake_title
         fill_in "Organization", with: fake_oranization
-        click_on("Create Employee")
-
-        expect(page).to have_content(fake_name)
-        #not rendering on web page but saving on db
-        #expect(page).to have_content(fake_dob)
-        #expect(page).to have_content(fake_title)
     end
-
-    # #SAD PATHS
-    # it "does not allow a user to create an employee without a name" do
-    #     fake_name = "FAKE NAME"
-    #     fake_dob = "05-25-1987"
-    #     fake_title = "FAKE TITLE"
-    #     fake_oranization = "FAKE ORGANIZATION"
-
-    #     visit new_employee_path
-    #     fill_in "Full name", with: fake_name
-    #     fill_in "Dob", with: ""
-    #     fill_in "Job title", with: fake_title
-    #     fill_in "Organization", with: fake_oranization
-    #     click_on("Create Employee")
-    #     expect(page).to have_content("error")
-    # end
 end
