@@ -29,6 +29,8 @@ RSpec.describe "adding employee", type: :system do
     #     click_on("Create Employee")
     #     #expect(page).to have_selector(".new_employee")
     # end
+
+    #look here
     it "allows a user to add an employee to an organization" do
         fake_name = "FAKE NAME"
         fake_dob = "05-25-1987"
@@ -40,6 +42,7 @@ RSpec.describe "adding employee", type: :system do
         fill_in "Dob", with: fake_dob
         fill_in "Job title", with: fake_title
         fill_in "Organization", with: fake_oranization
+        #select fake_oranization, from: "Organization"
         click_on("Create Employee")
 
         expect(page).to have_content(fake_name)
@@ -48,19 +51,21 @@ RSpec.describe "adding employee", type: :system do
         expect(page).to have_content(fake_title)
     end
 
-    # #SAD PATHS
-    # it "does not allow a user to create an employee without a name" do
-    #     fake_name = "FAKE NAME"
-    #     fake_dob = "05-25-1987"
-    #     fake_title = "FAKE TITLE"
-    #     fake_oranization = "FAKE ORGANIZATION"
+    #SAD PATHS
+    it "does not allow a user to create an employee without a name" do
+        fake_name = "FAKE NAME"
+        fake_dob = "05-25-1987"
+        fake_title = "FAKE TITLE"
+        fake_oranization = "FAKE ORGANIZATION"
 
-    #     visit new_employee_path
-    #     fill_in "Full name", with: fake_name
-    #     fill_in "Dob", with: ""
-    #     fill_in "Job title", with: fake_title
-    #     fill_in "Organization", with: fake_oranization
-    #     click_on("Create Employee")
-    #     expect(page).to have_content("error")
-    # end
+        visit new_employee_path
+        fill_in "Full name", with: fake_name
+        fill_in "Dob", with: ""
+        fill_in "Job title", with: fake_title
+        fill_in "Organization", with: fake_oranization
+
+        click_on("Create Employee")
+        
+        expect(page).to have_content("All Employees")
+    end
 end

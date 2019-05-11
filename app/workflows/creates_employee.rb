@@ -16,7 +16,12 @@ class CreatesEmployee
     def create
         build
         employee.organization = organization
-        employee.save
+        result = employee.save
+        @success = result
+    end
+
+    def success?
+        @success
     end
 
 end
