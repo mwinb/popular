@@ -20,9 +20,14 @@ class EmployeesController < ApplicationController
         #     organization: Organization.new(name: "test", location: "butt")
         # )
         #byebug
-        if @workflow.create
+
+        
+        @workflow.create
+
+        if @workflow.success?
             redirect_to employees_path
-        else 
+        else
+            @employee = @workflow.employee
             render :new
         end
         #@workflow.create
