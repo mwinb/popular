@@ -70,3 +70,6 @@ end
 group :development, :test do
   gem "rerun"
 end
+
+#factory bot
+gem 'factory_bot'
