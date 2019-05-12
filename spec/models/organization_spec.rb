@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Organization do
     let (:organization) { Organization.new(name:"Paddys Pub", location:"PA") }
-    let (:employee) { Employee.new(full_name:"Dennis Reynolds", dob:"08-18-1976", job_title:"Golden God", organization: Organization.new(name:"Paddys Pub", location:"PA"), department:"Management", status:"NA") }
+    let (:org_boi) { FactoryBot.build_stubbed(:organization) }
 
     it "has employees" do
         expect(organization).to respond_to(:employees)
@@ -17,16 +17,15 @@ RSpec.describe Organization do
     end
 
     it "is invalid without a name" do
-        #org_boi = create(:organization_)
-        expect(organization).to be_valid
-        organization.name = ""
-        expect(organization).not_to be_valid
+        expect(org_boi).to be_valid
+        org_boi.name = ""
+        expect(org_boi).not_to be_valid
     end
 
     it "is invalid without a location" do
-        expect(organization).to be_valid
-        organization.location = ""
-        expect(organization).not_to be_valid
+        expect(org_boi).to be_valid
+        org_boi.location = ""
+        expect(org_boi).not_to be_valid
     end
     
 end
