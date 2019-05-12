@@ -72,4 +72,4 @@ group :development, :test do
 end
 
 #factory bot
-gem 'factory_bot'
+gem 'factory_bot_rails'

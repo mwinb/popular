@@ -17,6 +17,7 @@ RSpec.describe Organization do
     end
 
     it "is invalid without a name" do
+        #org_boi = create(:organization_)
         expect(organization).to be_valid
         organization.name = ""
         expect(organization).not_to be_valid
