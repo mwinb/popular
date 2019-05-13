@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Employee, type: :model do
-  
-  let(:employee) { Employee.new }
+
+  let(:employee) {FactoryBot.build(:employee)}
 
   it "belongs to an organization" do
     expect(employee).to respond_to(:organization)
@@ -12,18 +12,26 @@ RSpec.describe Employee, type: :model do
     expect(employee).to respond_to(:full_name)
   end
 
+  it "has a full name inserted" do
+    expect(employee.full_name).to eql("Dennis Reynolds")
+  end
+
   it "has a job title" do
    expect(employee).to respond_to(:job_title)
   end
 
+  it "has a job title2" do
+    expect(employee.job_title).to eql("Golden God")
+  end
+
   it "has a dob" do
     expect(employee).to respond_to(:dob)
-   end
+  end
 
-   it "belongs to an organization" do
+  it "belongs to an organization" do
     employee.organization = Organization.new(name: "FAKE ORGANIZATION", location: "fake place")
     expect(employee.organization.name).to eq("FAKE ORGANIZATION") 
-   end
+  end
 
   it "is invalid without a name" do
     employee.organization = Organization.new(name: "FAKE ORGANIZATION", location: "fake place")

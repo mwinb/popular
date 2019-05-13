@@ -1,7 +1,7 @@
 class CreatesEmployee
     attr_accessor :employee_full_name, :employee_dob, :employee_job_title, :organization_name, :employee, :organization
 
-    def initialize(employee_full_name: "", organization_name: "", employee_dob: "", employee_job_title: "")
+    def initialize(employee_full_name: "", organization_name: nil, employee_dob: "", employee_job_title: "")
         @employee_full_name = employee_full_name
         @organization_name = organization_name
         @employee_dob = employee_dob

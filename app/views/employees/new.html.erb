@@ -10,7 +10,8 @@
     <%= f.text_field(:job_title) %>
     <br />
     <%= label_tag(:organization_name) %>
-    <%= text_field_tag(:organization_name) %>
+    <%#= <%= text_field_tag(:organization_name) %>
+    <%= f.select :organization, options_for_select([["paddies pub"]], :selected => :organization) %>
     <br />
     <%= f.submit %>
 <% end %>
