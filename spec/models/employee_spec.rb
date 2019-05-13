@@ -20,7 +20,7 @@ RSpec.describe Employee, type: :model do
    expect(employee).to respond_to(:job_title)
   end
 
-  it "has a job title2" do
+  it "has a job title 2" do
     expect(employee.job_title).to eql("Golden God")
   end
 
