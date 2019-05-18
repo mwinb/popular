@@ -1,8 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Organization do
-    let (:organization) { Organization.new(name:"Paddys Pub", location:"PA") }
-    let (:org_boi) { FactoryBot.build_stubbed(:organization) }
+    let (:organization) { FactoryBot.build_stubbed(:organization) }
+    before(:each) do
+        @mock_dependency = double("some_dependency")
+    end
 
     it "has employees" do
         expect(organization).to respond_to(:employees)
@@ -17,15 +19,25 @@ RSpec.describe Organization do
     end
 
     it "is invalid without a name" do
-        expect(org_boi).to be_valid
-        org_boi.name = ""
-        expect(org_boi).not_to be_valid
+        expect(organization).to be_valid
+        organization.name = ""
+        expect(organization).not_to be_valid
     end
 
     it "is invalid without a location" do
-        expect(org_boi).to be_valid
-        org_boi.location = ""
-        expect(org_boi).not_to be_valid
+        expect(organization).to be_valid
+        organization.location = ""
+        expect(organization).not_to be_valid
     end
     
+    it "(fake) returns a result from an organization performing" do
+        result = organization.perform(LittleDependency.new)
+        expect(result).to eq(42)
+    end
+
+    it "(stub/mock) returns a result from an organization performing" do
+        allow(@mock_dependency).to receive(:execute)
+        result = organization.perform(@mock_dependency)
+        expect(result).to eq(42)
+    end
 end
