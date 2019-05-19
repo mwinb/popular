@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_05_08_183554) do
 
   create_table "employees", force: :cascade do |t|
     t.string "full_name"
-    t.date "dob"
+    t.string "dob"
     t.string "job_title"
     t.string "status"
     t.datetime "created_at", null: false

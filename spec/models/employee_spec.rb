@@ -49,4 +49,26 @@ RSpec.describe Employee, type: :model do
     expect(employee).not_to be_valid
   end
 
+  it "Fake returns from Employee class 42" do
+    result = employee.perform(LittleDependency.new)
+    expect(result).to eq(42)
+  end
+
+  it "stubs and mocks to return employee perform value" do
+    mocky = double("mock double 1")
+    allow(mocky).to receive(:execute)
+    result = employee.perform(mocky)
+    expect(result).to eq(42)
+  end
+
+  it "stubs and mocks the Employee object to test return values" do
+    fakeN = "Fake Full Name"
+    fake_job_title = "Fake Jobe Title"
+    mock_employee = Employee.new(full_name: fakeN, job_title: fake_job_title)
+    expect(mock_employee).to receive(:full_name).and_return(fakeN)
+    expect(mock_employee).to receive(:job_title).and_return(fake_job_title)
+    expect(mock_employee.full_name).to eq(fakeN)
+    expect(mock_employee.job_title).to eq(fake_job_title)
+  end
+
 end
