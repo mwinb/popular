@@ -65,3 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem "rspec-rails", "~> 3.7.0"
 end
+
+#rerun to autorun app on filesystem change
+group :development, :test do
+  gem "rerun"
+end
+
+#factory bot
+gem 'factory_bot_rails'

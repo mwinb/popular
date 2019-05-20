@@ -1,0 +1,19 @@
+<h1>All Employees</h1>
+<table>
+    <thead>
+        <tr>
+            <strong><td>Employee Name</td><td>DOB</td><td>JOB TITLE</td></strong>
+        </tr>
+    </thead>
+    <tbody>
+        <% @employees.each do |employee| %>
+        <tr>
+            <td><%= employee.full_name %></td>
+        
+            <td><%= employee.dob %></td>
+       
+            <td><%= employee.job_title %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

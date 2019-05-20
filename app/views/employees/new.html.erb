@@ -1,0 +1,17 @@
+<h1>Employee Info</h1>
+<%= form_for(@employee) do |f| %>
+    <%= f.label(:full_name) %>
+    <%= f.text_field(:full_name) %>
+    <br />
+    <%= f.label(:dob) %>
+    <%= f.text_field(:dob) %>
+    <br />
+    <%= f.label(:job_title) %>
+    <%= f.text_field(:job_title) %>
+    <br />
+    <%= label_tag(:organization_name) %>
+    <%#= <%= text_field_tag(:organization_name) %>
+    <%= f.select :organization, options_for_select([["paddies pub"]], :selected => :organization) %>
+    <br />
+    <%= f.submit %>
+<% end %>
