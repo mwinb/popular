@@ -7,6 +7,14 @@ RSpec.describe Organization do
         expect(organization).to respond_to(:employees)
     end
 
+    it "has the proper name" do
+        expect(organization.name).to eq("Flipadelphia")
+    end
+
+    it "has the proper location" do
+        expect(organization.location).to eq("PA")
+    end
+
     it "has a name" do
         expect(organization).to respond_to(:name)
     end
@@ -26,5 +34,4 @@ RSpec.describe Organization do
         organization.location = ""
         expect(organization).not_to be_valid
     end
-    
 end
