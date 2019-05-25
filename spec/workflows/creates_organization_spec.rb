@@ -28,7 +28,7 @@ RSpec.describe CreatesOrganization do
         it "checks if an entry is empty" do
             creator = CreatesOrganization.new(organization_name: "Paddys Pub", organization_location: nil)
             creator.create
-            assert_equal creator.organization.location, nil, "there is some kind of location still"
+            expect(creator.organization.location).to be(nil)
         end
 
         it "checks if an organization name is filled" do
