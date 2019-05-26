@@ -11,7 +11,7 @@
     <br />
     <%= label_tag(:organization_name) %>
     <%#= <%= text_field_tag(:organization_name) %>
-    <%= collection_select(:name, 0, Organization.all, :id, :name) %>
+    <%= f.collection_select :organization, Organization.all, :name, :name %>
     <br />
     <%= f.submit %>
 <% end %>
