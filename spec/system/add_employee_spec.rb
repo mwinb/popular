@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "adding employee", type: :system do
+=begin
     # let (:org) {Organization.new("Paddys Pub", "PA")}
     # let (:employee) { Employee.new(full_name:"Dennis Reynolds", dob:"08-18-1976", job_title:"Golden God", organization: Organization.new(name:"Paddys Pub", location:"PA"), department:"Management", status:"NA") }
     
@@ -50,4 +51,5 @@ RSpec.describe "adding employee", type: :system do
         end
       end
 
+=end
 end
