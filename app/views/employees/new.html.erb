@@ -9,9 +9,8 @@
     <%= f.label(:job_title) %>
     <%= f.text_field(:job_title) %>
     <br />
-    <%= label_tag(:organization_name) %>
-    <%#= <%= text_field_tag(:organization_name) %>
-    <%= f.collection_select :organization, Organization.all, :formatted_name, :formatted_name %>
+    <%= f.label(:organization_id, 'Organization') %>
+    <%= f.collection_select :organization_id, Organization.all, :id, :formatted_name, prompt: true %>
     <br />
     <%= f.submit %>
 <% end %>

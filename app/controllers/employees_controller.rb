@@ -10,7 +10,7 @@ class EmployeesController < ApplicationController
   def create
     @workflow = CreatesEmployee.new(
     employee_full_name: params[:employee][:full_name],
-    organization_name: params[:employee][:organization],
+    organization_id: params[:employee][:organization_id],
     employee_dob: params[:employee][:dob],
     employee_job_title: params[:employee][:job_title])
    
