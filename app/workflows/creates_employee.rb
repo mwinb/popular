@@ -1,7 +1,7 @@
 class CreatesEmployee
     attr_accessor :employee_full_name, :employee_dob, :employee_job_title, :organization_id, :employee, :organization
 
-    def initialize(employee_full_name: nil, organization_id: nil, employee_dob: "", employee_job_title: "")
+    def initialize(employee_full_name: nil, organization_id: "", employee_dob: "", employee_job_title: "")
         @employee_full_name = employee_full_name
         @organization_id = organization_id;
         @employee_dob = employee_dob
@@ -25,8 +25,9 @@ class CreatesEmployee
     end
 
     def get_organization_by_id(organization_id)
-      return Organization.find(organization_id)
+       Organization.find(organization_id) if organization_id != ""
     end
+
     def parse_organization_name
       if @organization_name != nil
         @organization_name = @organization_name.split(" | ", 2)
