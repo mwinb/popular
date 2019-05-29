@@ -2,7 +2,7 @@
 <table>
     <thead>
         <tr>
-            <strong><td>Employee Name</td><td>DOB</td><td>JOB TITLE</td></strong>
+            <strong><td>Employee Name</td><td>Date of Birth</td><td>Job Title</td><td>Organization</td><td>Location</td></strong>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +13,8 @@
             <td><%= employee.dob %></td>
        
             <td><%= employee.job_title %></td>
-            <td><%= employee.organization.to_s %></td>
+            <td><%= employee.organization.name %></td>
+            <td><%= employee.organization.location %></td>
         </tr>
         <% end %>
     </tbody>

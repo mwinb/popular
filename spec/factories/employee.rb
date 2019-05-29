@@ -3,5 +3,6 @@ FactoryBot.define do
         full_name {"Dennis Reynolds"}
         dob {"08-18-1976"}
         job_title {"Golden God"}
+        organization { FactoryBot.create(:organization)}
     end
 end

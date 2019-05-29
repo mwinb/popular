@@ -9,9 +9,7 @@ class CreatesEmployee
     end
 
     def build
-
       self.employee = Employee.new(full_name: employee_full_name, dob: employee_dob, job_title: employee_job_title, organization: get_organization_by_id(organization_id))
-
     end
 
     def create

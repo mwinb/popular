@@ -28,7 +28,8 @@ RSpec.describe "adding employee", type: :system do
         expect(page).to have_content(fake_name)
         expect(page).to have_content(fake_title)
         expect(page).to have_content(fake_dob)
-        expect(page).to have_content("Flipadelphia | PA")
+        expect(page).to have_content(@test_organization.name)
+        expect(page).to have_content(@test_organization.location)
     end
 
     #SAD PATHS
@@ -49,12 +50,5 @@ RSpec.describe "adding employee", type: :system do
         click_on(submit_label)
         expect(page).to_not have_content("All Employees")
     end
-
-    describe "fullname" do
-        let(:employee) {build(:employee, full_name: "Dennis Reynolds", dob: "08-18-1976", job_title: "golden god")}
-        it "has a full name" do
-          expect(employee.full_name).to eql "Dennis Reynolds"
-        end
-      end
 
 end

@@ -12,6 +12,12 @@ class CreatesOrganization
 
     def create
         build
-        organization.save
+        result = organization.save
+        @success = result
     end
+
+    def success?
+        @success
+    end
+
 end
