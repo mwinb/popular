@@ -1,6 +1,10 @@
 require "rails_helper"
 
+
+
 RSpec.describe "adding employee", type: :system do
+    
+    attr_accessor :test_organization
     
     before do
         @test_organization = FactoryBot.create(:organization)
@@ -10,6 +14,7 @@ RSpec.describe "adding employee", type: :system do
     let(:fake_name) { "FAKE NAME" }
     let(:fake_dob) { "05-25-1987" }
     let(:fake_title) { "FAKE TITLE" }
+
     let(:name_label) { "Full name" }
     let(:dob_label) { "Dob" }
     let(:title_label) { "Job title" }
@@ -22,14 +27,14 @@ RSpec.describe "adding employee", type: :system do
         fill_in name_label, with: fake_name
         fill_in dob_label, with: fake_dob
         fill_in title_label, with: fake_title
-        select(fake_organization_selector, from: organization_label)
+        select fake_organization_selector, from: organization_label
         click_on(submit_label)
 
         expect(page).to have_content(fake_name)
         expect(page).to have_content(fake_title)
         expect(page).to have_content(fake_dob)
-        expect(page).to have_content(@test_organization.name)
-        expect(page).to have_content(@test_organization.location)
+        expect(page).to have_content(test_organization.name)
+        expect(page).to have_content(test_organization.location)
     end
 
     #SAD PATHS
