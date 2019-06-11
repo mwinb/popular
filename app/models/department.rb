@@ -5,4 +5,8 @@ class Department < ApplicationRecord
 
   validates :name, presence: true
 
+  def perform(big_dependency)
+    big_dependency.execute
+    42
+  end
 end

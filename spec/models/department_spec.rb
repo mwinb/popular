@@ -16,18 +16,6 @@ RSpec.describe Department, type: :model do
     expect(department.name).to eql("HR")
   end
 
-  it "has a job title" do
-   expect(department).to respond_to(:job_title)
-  end
-
-  it "has a job title 2" do
-    expect(department.job_title).to eql("Golden God")
-  end
-
-  it "has a dob" do
-    expect(department).to respond_to(:dob)
-  end
-
   it "belongs to an organization" do
     department.organization = Organization.new(name: "FAKE ORGANIZATION", location: "fake place")
     expect(department.organization.name).to eq("FAKE ORGANIZATION") 
@@ -63,7 +51,8 @@ RSpec.describe Department, type: :model do
 
   it "stubs and mocks the department object to test return values" do
     fakeN = "Fake Full Name"
-    mock_department = department.new(name: fakeN)
+    fakeO = Organization.new(name: "Fake Name", location: "Fake Loc")
+    mock_department = Department.new(name: fakeN, organization: fakeO)
     expect(mock_department).to receive(:name).and_return(fakeN)
     expect(mock_department.name).to eq(fakeN)
   end
