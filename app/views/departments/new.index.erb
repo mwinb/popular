@@ -1,0 +1,10 @@
+<h1>Departnemnt Info</h1>
+<%= form_for(@department) do |f| %>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+    <br />
+    <%= f.label(:organization_id, 'Organization') %>
+    <%= f.collection_select :organization_id, Organization.all, :id, :formatted_name, prompt: true %>
+    <br />
+    <%= f.submit %>
+<% end %>
