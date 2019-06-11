@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :organization do
         name { "Flipadelphia" }
-        location { "PA" }
+        locations { "PA" }
     end
 end

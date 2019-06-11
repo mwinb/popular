@@ -1,8 +1,8 @@
 class Organization < ApplicationRecord
 
-  has_many :employees
-  has_many :locations
-  has_many :departments
+  has_many :employees, through: :employees, dependent: :destroy
+  has_many :locations, dependent: :destroy
+  has_many :departments, dependent: :destroy
 
   validates :name, presence: true
 

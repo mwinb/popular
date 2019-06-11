@@ -11,8 +11,11 @@ class OrganizationsController < ApplicationController
     def create
         @organization = Organization.new(
           name: params[:organization][:name],
-          location: params[:organization][:location]
+          location: params[:organization][:location],
+          departments: params[:organization][:departments],
+          employees: params[:organization][:employees]
         )
+        
         if @organization.save
             redirect_to organizations_path
         else
