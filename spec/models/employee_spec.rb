@@ -35,6 +35,7 @@ RSpec.describe Employee, type: :model do
 
   it "is invalid without a name" do
     employee.organization = Organization.new(name: "FAKE ORGANIZATION", location: "fake place")
+    employee.department = Department.new(name: "FAKE DEPARTMENT")
     employee.full_name = "Fake Name"
     expect(employee).to be_valid
     employee.full_name = ""
@@ -43,6 +44,7 @@ RSpec.describe Employee, type: :model do
 
   it "is invalid without an Organization" do
     employee.organization = Organization.new(name: "FAKE ORGANIZATION", location: "fake place")
+    employee.department = Department.new(name: "FAKE DEPARTMENT")
     employee.full_name = "Fake Name"
     expect(employee).to be_valid
     employee.organization = nil
