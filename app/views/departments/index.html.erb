@@ -1,0 +1,16 @@
+<h1>All Departments</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Department Name</td><td>Organization</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @organizations.each do |organization| %>
+        <tr>
+            <td><%= organization.name %></td>
+            <td><%= organization.organization %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
