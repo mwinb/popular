@@ -6,8 +6,4 @@ class Organization < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
 
-  def formatted_name
-    # "#{name} | #{location}"
-  end
-
 end

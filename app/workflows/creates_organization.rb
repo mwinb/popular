@@ -1,14 +1,18 @@
  class CreatesOrganization
-    attr_accessor :organization_name, :organization, :organization_location
+    attr_accessor :organization, :name, :location, :departments, :employees
 
-    def initialize(organization_name: "", organization_location: nil)
-        @organization_name = organization_name
-        @organization_location = organization_location
+    def initialize(name: "", location: nil, departments: nil, employees: nil)
+        @name = name
+        @location = location
+        @departments = departments
+        @employees = employees
     end
 
     def build
-       self.organization = Organization.new(name: organization_name,
-                                            locations: organization_location)
+       self.organization = Organization.new(name: name,
+                                            locations: location,
+                                            departments: departments,
+                                            employees: employees)
     end
 
     def create

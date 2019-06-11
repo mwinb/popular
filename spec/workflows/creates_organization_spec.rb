@@ -5,7 +5,8 @@
   
 
       it "creates organization given name and location" do
-          creator = CreatesOrganization.new(organization_name: "Baddys Pub", organization_location: "PA")
+          creator = CreatesOrganization.new(organization_name: "Baddys Pub",
+                                            organization_location: "PA")
           creator.create
           expect(creator.success?).to be(true)
       end
